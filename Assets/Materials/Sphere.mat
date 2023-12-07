@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sphere
-  m_Shader: {fileID: -6465566751694194690, guid: 78f422ec8e29ca24084ecbad96c532c3,
+  m_Shader: {fileID: -6465566751694194690, guid: 0d4070377f9d53e49b1696e513c1ee6f,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -129,6 +129,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Emision: {r: 0.042674977, g: 0.20754719, b: 0.0029369832, a: 0}
     - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Inicial: {r: 0, g: 1, b: 0.08247161, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
