@@ -5,8 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Transform reference;
+    [SerializeField] private float velocidad = 5.0f;
+    [SerializeField] private GameObject estrellaPrefab;
+    [SerializeField] private Transform referenciaGeneracionEstrella;
     [SerializeField] private Vector3 simplePosition;
+    [SerializeField] private Transform reference;
+    [SerializeField] private Transform objetoDestino;
+    private Camera mainCamera;
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -16,5 +26,32 @@ public class PlayerController : MonoBehaviour
         Vector3 complexPosition = Camera.main.ScreenToWorldPoint(simplePosition);
 
         reference.position = complexPosition;
+    }
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        Vector3 posicionGeneracion = referenciaGeneracionEstrella.position;
+        GameObject nuevaEstrella = Instantiate(estrellaPrefab, posicionGeneracion, Quaternion.identity);
+
+        Vector3 direccion = (objetoDestino.position - posicionGeneracion).normalized;
+
+        Transform transformEstrella = nuevaEstrella.transform;
+        transformEstrella.position = posicionGeneracion;
+        float distanciaTotal = Vector3.Distance(posicionGeneracion, objetoDestino.position);
+
+        StartCoroutine(MoverEstrella(transformEstrella, direccion, distanciaTotal));
+    }
+
+    private IEnumerator MoverEstrella(Transform estrella, Vector3 direccion, float distanciaTotal)
+    {
+        float distanciaRecorrida = 0f;
+
+        while (distanciaRecorrida < distanciaTotal)
+        {
+            float movimiento = velocidad * Time.deltaTime;
+            estrella.Translate(direccion * movimiento);
+            distanciaRecorrida += movimiento;
+            yield return null;
+        }
+        Destroy(estrella.gameObject);
     }
 }
