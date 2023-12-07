@@ -18,6 +18,14 @@ public class LineRendererController : MonoBehaviour
     [SerializeField] private float radiusStep;
     [SerializeField] private int _pivotPoints;
 
+    [Header("Luces")]
+    public GameObject[]luz;
+    public int count;
+
+    [Header("Separador")]
+    public int distancia;
+
+    
     
     private void Start()
     {
@@ -33,11 +41,25 @@ public class LineRendererController : MonoBehaviour
             float y = i * altura;  // 0.01 funca bien xd
             float z = Mathf.Sin(angle) * radius;
             Vector3 position = new Vector3(x, y, z);
+            //Debug.Log(position);
             lineRenderer.SetPosition(i, position);
+            if (count % distancia ==0)
+            {
+                GameObject clone = Instantiate(luz[Random.Range(0,luz.Length)], position, Quaternion.identity);
+                clone.transform.SetParent(this.transform);
+            }
 
             // reducir radio 
             radius -= radiusStep;
+
+            count ++;
+            
         }
+       
+    }
+    private void Update()
+    {
+        Debug.Log(count);
     }
     //private void Update()
     //{

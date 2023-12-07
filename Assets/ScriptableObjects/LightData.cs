@@ -12,7 +12,8 @@ public class LightData : ScriptableObject
     [SerializeField] private string colorKey = "_BaseColor";
     [SerializeField] private string emissionKey = "_EmissionColor";
 
-    public Color BaseColor => baseColor;
+    public Color BaseColor => baseColor; // =>  es pa hacerlo publi
+
     public Color EmissionColor => emissionColor;
     public string ColorKey => colorKey;
     public string EmissionKey => emissionKey;
