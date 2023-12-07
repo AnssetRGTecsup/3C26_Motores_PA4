@@ -28,4 +28,10 @@ public class SphereController : MonoBehaviour
         sphereData.SetUpLight(lightComponent);
         Debug.Log(lightComponent);
     }
+
+    [ContextMenu("Message")]
+    private void Message1()
+    {
+        Debug.Log("Feliz Navidad: " + gameObject.name);
+    }
 }

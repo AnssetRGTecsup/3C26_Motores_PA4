@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2feca480d9e97294596f0d75eda7726e, type: 3}
   m_Name: Light Data Blue
   m_EditorClassIdentifier: 
-  baseColor: {r: 0, g: 0, b: 1, a: 1}
-  emissionColor: {r: 0, g: 0, b: 1, a: 1}
+  baseColor: {r: 0.017205715, g: 0, b: 1, a: 1}
+  emissionColor: {r: 0, g: 0.031424284, b: 1, a: 1}
   lightIntensity: 1
   material: {fileID: 2100000, guid: 049d3781a1389214aa33257996e552c2, type: 2}
   colorKey: _BaseColor
