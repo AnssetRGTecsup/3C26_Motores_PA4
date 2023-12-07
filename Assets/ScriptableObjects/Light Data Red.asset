@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseColor: {r: 1, g: 0, b: 0, a: 1}
   emissionColor: {r: 1, g: 0, b: 0, a: 1}
-  lightIntensity: 1
+  lightIntensity: 2
   material: {fileID: 2100000, guid: 049d3781a1389214aa33257996e552c2, type: 2}
   colorKey: _BaseColor
   emissionKey: _EmissionColor

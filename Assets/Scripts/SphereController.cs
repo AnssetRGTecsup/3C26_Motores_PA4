@@ -21,8 +21,11 @@ public class SphereController : MonoBehaviour
     {
         //materialReference.material.SetColor(sphereData.ColorKey, sphereData.BaseColor);
         //materialReference.material.SetColor(sphereData.EmissionKey, sphereData.EmissionColor);
-
+        
         sphereData.SetUpMaterial(materialReference.material);
+        Debug.Log(materialReference.material);
+        
         sphereData.SetUpLight(lightComponent);
+        Debug.Log(lightComponent);
     }
 }

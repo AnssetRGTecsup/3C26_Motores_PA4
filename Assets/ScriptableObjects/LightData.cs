@@ -7,7 +7,7 @@ public class LightData : ScriptableObject
 {
     [SerializeField] private Color baseColor = Color.white;
     [SerializeField] private Color emissionColor = Color.white;
-    [SerializeField] private float lightIntensity = 1f;
+    [SerializeField] private float lightIntensity =5f;
     [SerializeField] private Material material;
     [SerializeField] private string colorKey = "_BaseColor";
     [SerializeField] private string emissionKey = "_EmissionColor";
