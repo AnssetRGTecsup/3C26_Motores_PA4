@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 simplePosition;
     [SerializeField] private Transform reference;
     [SerializeField] private Transform objetoDestino;
+
+    public Vector3 minPosition;
+    public Vector3 maxPosition;
+
+    
     private Camera mainCamera;
 
     private void Start()
@@ -26,6 +31,7 @@ public class PlayerController : MonoBehaviour
         Vector3 complexPosition = Camera.main.ScreenToWorldPoint(simplePosition);
 
         reference.position = complexPosition;
+        Debug.Log("posicion del mouse en la pantalla: "+complexPosition);
     }
     public void OnClick(InputAction.CallbackContext context)
     {
@@ -33,6 +39,7 @@ public class PlayerController : MonoBehaviour
         GameObject nuevaEstrella = Instantiate(estrellaPrefab, posicionGeneracion, Quaternion.identity);
 
         Vector3 direccion = (objetoDestino.position - posicionGeneracion).normalized;
+        Debug.Log("direccion destino?: " + direccion);
 
         Transform transformEstrella = nuevaEstrella.transform;
         transformEstrella.position = posicionGeneracion;
